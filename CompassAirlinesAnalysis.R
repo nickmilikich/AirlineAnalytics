@@ -118,6 +118,36 @@ hist(flightinfo$temperature)
 hist(flightinfo$humidity)
 hist(flightinfo$windGust)
 hist(flightinfo$visibility)
+# Lots of skewed distributions
+
+# Let's check some scatterplots
+plot(flightinfo$Flight_Distance, flightinfo$Arrival_Delay_Minutes, pch = 20, cex = 0.5)
+plot(flightinfo$Scheduled_Departure_Time, flightinfo$Arrival_Delay_Minutes, pch = 20, cex = 0.5)
+# Looks like flights later in the day tend to have longer delays
+plot(flightinfo$Departure_Delay_Minutes, flightinfo$Arrival_Delay_Minutes, pch = 20, cex = 0.5)
+# Pretty much collinear, which we would expect
+plot(flightinfo$Departure_Taxi, flightinfo$Arrival_Delay_Minutes, pch = 20, cex = 0.5)
+plot(flightinfo$Arrival_Taxi, flightinfo$Arrival_Delay_Minutes, pch = 20, cex = 0.5)
+# Looks like maybe longer taxi times are associated with longer delays,
+# but rather difficult to tell
+plot(flightinfo$Delay_Reason, flightinfo$Arrival_Delay_Minutes, pch = 20, cex = 0.5)
+plot(flightinfo$precipIntensity, flightinfo$Arrival_Delay_Minutes, pch = 20, cex = 0.5)
+plot(flightinfo$precipProbability, flightinfo$Arrival_Delay_Minutes, pch = 20, cex = 0.5)
+plot(flightinfo$temperature, flightinfo$Arrival_Delay_Minutes, pch = 20, cex = 0.5)
+plot(flightinfo$apparentTemperature, flightinfo$Arrival_Delay_Minutes, pch = 20, cex = 0.5)
+plot(flightinfo$dewPoint, flightinfo$Arrival_Delay_Minutes, pch = 20, cex = 0.5)
+plot(flightinfo$humidity, flightinfo$Arrival_Delay_Minutes, pch = 20, cex = 0.5)
+plot(flightinfo$pressure, flightinfo$Arrival_Delay_Minutes, pch = 20, cex = 0.5)
+plot(flightinfo$windSpeed, flightinfo$Arrival_Delay_Minutes, pch = 20, cex = 0.5)
+plot(flightinfo$windGust, flightinfo$Arrival_Delay_Minutes, pch = 20, cex = 0.5)
+# Looks like maybe windier days tend to have longer delays
+plot(flightinfo$windBearing, flightinfo$Arrival_Delay_Minutes, pch = 20, cex = 0.5)
+plot(flightinfo$cloudCover, flightinfo$Arrival_Delay_Minutes, pch = 20, cex = 0.5)
+plot(flightinfo$uvIndex, flightinfo$Arrival_Delay_Minutes, pch = 20, cex = 0.5)
+plot(flightinfo$visibility, flightinfo$Arrival_Delay_Minutes, pch = 20, cex = 0.5)
+plot(flightinfo$ozone, flightinfo$Arrival_Delay_Minutes, pch = 20, cex = 0.5)
+plot(flightinfo$precipType, flightinfo$Arrival_Delay_Minutes, pch = 20, cex = 0.5)
+plot(flightinfo$precipAccumulation, flightinfo$Arrival_Delay_Minutes, pch = 20, cex = 0.5)
 
 scatterplot = data.frame(cbind(flightinfo$Arrival_Delay_Minutes, flightinfo$precipIntensity, flightinfo$windGust, flightinfo$visibility))
 names(scatterplot) = c("Delay", "Precipitation", "Wind", "Visibility")
