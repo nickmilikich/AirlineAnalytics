@@ -12,6 +12,7 @@ Running this code requires that the R packages GGally, rpart, randomForest, and 
 To run the source code, the following should be included in the same directory (included in this repository):
 - `Flight_on_time_HIX.csv`, a summary of all flights leaving Highland airport in December 2019.
 - `weather.csv`, a summary of the weather conditions at several airports by hour.
+
 (Also included in this repository are data dictionaries for each of these raw data files.)
 
 This project was run using R version 4.0.3.
